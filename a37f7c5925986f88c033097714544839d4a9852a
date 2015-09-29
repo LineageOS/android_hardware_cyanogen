@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_af1a5914",
+        "filename": "cmhw/org/cyanogenmod/hardware/LiveDisplayVendorImpl.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 3134
+      },
+      "writtenOn": "2015-09-29T21:39:41Z",
+      "side": 1,
+      "message": "remove this spaces here and below",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 4
+      },
+      "revId": "a37f7c5925986f88c033097714544839d4a9852a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
