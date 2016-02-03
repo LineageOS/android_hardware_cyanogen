@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fcbff3d_3dc75748",
+        "filename": "cmhw/org/cyanogenmod/hardware/UniqueDeviceId.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 10094
+      },
+      "writtenOn": "2016-02-03T02:55:48Z",
+      "side": 1,
+      "message": "This returns null on failure.  Should check for that.",
+      "range": {
+        "startLine": 57,
+        "startChar": 26,
+        "endLine": 57,
+        "endChar": 47
+      },
+      "revId": "8eaed66f2971714ab8a518ba091eef392f5b5750",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fcbff3d_ddc5f33d",
+        "filename": "cmhw/org/cyanogenmod/hardware/UniqueDeviceId.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 10094
+      },
+      "writtenOn": "2016-02-03T02:55:48Z",
+      "side": 1,
+      "message": "sCid.trim()",
+      "range": {
+        "startLine": 58,
+        "startChar": 19,
+        "endLine": 58,
+        "endChar": 42
+      },
+      "revId": "8eaed66f2971714ab8a518ba091eef392f5b5750",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
