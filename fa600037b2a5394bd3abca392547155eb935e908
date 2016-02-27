@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_f76fc0c2",
+        "filename": "cmhw/org/cyanogenmod/hardware/UniqueDeviceId.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 14145
+      },
+      "writtenOn": "2016-02-27T03:36:03Z",
+      "side": 1,
+      "message": "The null check comes for free with equals()",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 34
+      },
+      "revId": "fa600037b2a5394bd3abca392547155eb935e908",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
