@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_e24846cd",
+        "filename": "cmhw/org/cyanogenmod/hardware/DisplayColorCalibration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8975
+      },
+      "writtenOn": "2016-04-12T22:20:19Z",
+      "side": 1,
+      "message": "Who would use it if it has a high power cost? Maybe we should warn user when LiveDisplay uses GPU? User will activate this and then after a few days notice poor battery life. I wouldn\u0027t guess it\u0027s LiveDisplay.",
+      "parentUuid": "7faddb67_a22b2ee9",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 19
+      },
+      "revId": "df9286e6c5117d10f05a9b7b53b129ff7bf6066e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_0273224f",
         "filename": "cmhw/org/cyanogenmod/hardware/DisplayColorCalibration.java",
         "patchSetId": 1
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "Because this is API which could be different in another implementation.",
       "parentUuid": "7faddb67_0273224f",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "df9286e6c5117d10f05a9b7b53b129ff7bf6066e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_223f3e26",
+        "filename": "cmhw/org/cyanogenmod/hardware/DisplayColorCalibration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8975
+      },
+      "writtenOn": "2016-04-12T22:20:19Z",
+      "side": 1,
+      "message": "Yeah, didn\u0027t think about that.",
+      "parentUuid": "7faddb67_c22e6af9",
       "range": {
         "startLine": 50,
         "startChar": 4,
