@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_a28fae21",
+        "filename": "cmhw/org/cyanogenmod/hardware/DisplayColorCalibration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8975
+      },
+      "writtenOn": "2016-04-12T20:46:32Z",
+      "side": 1,
+      "message": "Maybe it\u0027s better to disable it by default and leave a property for those who don\u0027t care about power usage?",
+      "range": {
+        "startLine": 46,
+        "startChar": 8,
+        "endLine": 46,
+        "endChar": 19
+      },
+      "revId": "df9286e6c5117d10f05a9b7b53b129ff7bf6066e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_0273224f",
+        "filename": "cmhw/org/cyanogenmod/hardware/DisplayColorCalibration.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8975
+      },
+      "writtenOn": "2016-04-12T20:46:32Z",
+      "side": 1,
+      "message": "If this method always returns true, why don\u0027t we just remove it?",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 39
+      },
+      "revId": "df9286e6c5117d10f05a9b7b53b129ff7bf6066e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
