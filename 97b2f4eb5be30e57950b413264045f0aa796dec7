@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_8e0a1c88",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-01T04:23:08Z",
+      "side": 1,
+      "message": "Android imports should come before cyanogenmod ones I think",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_aef27899",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-01T04:23:08Z",
+      "side": 1,
+      "message": "We could do what hardware/samsung does and allow the paths to be overridden by a system property.",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_0ef62c91",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-01T04:23:08Z",
+      "side": 1,
+      "message": "Should check isFileReadable(LEVEL_PATH) as well.",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_6e05607a",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-01T04:23:08Z",
+      "side": 1,
+      "message": "Is there a more specific exception to be caught? I\u0027m guessing NumberFormatException.",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_eef8707d",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-01T04:23:08Z",
+      "side": 1,
+      "message": "Is the value -1 handled differently in the framework to mean an invalid/unknown value? If not, we might want to return the current intensity using getCurIntensity()? Same for min intensity and default intensity.",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_4e04247c",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-01T04:23:08Z",
+      "side": 1,
+      "message": "Could maybe add a sysfs node for this too.",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
