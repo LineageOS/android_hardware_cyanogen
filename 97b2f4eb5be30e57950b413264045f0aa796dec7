@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_01ccbd87",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-07-01T12:08:32Z",
+      "side": 1,
+      "message": "This try catch is similar to other checks in this repo. If we need to catch more specific exceptions, it needs to be a new commit and switch all other classes too.",
+      "parentUuid": "3fa7e38b_6e05607a",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_eef8707d",
         "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
         "patchSetId": 2
@@ -188,6 +206,24 @@
       "side": 1,
       "message": "Doesn\u0027t hurt to add one so that devices using this can configure their warning thresholds",
       "parentUuid": "3fa7e38b_4e12e4b3",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_e1ce4182",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-07-01T12:08:32Z",
+      "side": 1,
+      "message": "All devices I\u0027ve seen so far default to max voltage, so there\u0027s no threshold, we don\u0027t overvolt.",
+      "parentUuid": "3fa7e38b_ee6b901c",
       "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
