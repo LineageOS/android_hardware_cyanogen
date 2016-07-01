@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_2e34484a",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-01T05:01:01Z",
+      "side": 1,
+      "message": "Actually your solution seems better",
+      "parentUuid": "3fa7e38b_aef27899",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_0ef62c91",
         "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
         "patchSetId": 2
