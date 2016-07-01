@@ -155,6 +155,24 @@
       "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ee6b901c",
+        "filename": "cmhw/org/cyanogenmod/hardware/VibratorHW.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-01T05:53:30Z",
+      "side": 1,
+      "message": "Doesn\u0027t hurt to add one so that devices using this can configure their warning thresholds",
+      "parentUuid": "3fa7e38b_4e12e4b3",
+      "revId": "97b2f4eb5be30e57950b413264045f0aa796dec7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
