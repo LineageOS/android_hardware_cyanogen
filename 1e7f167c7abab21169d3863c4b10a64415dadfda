@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_dec65e17",
+        "filename": "cmhw/org/cyanogenmod/hardware/UniqueDeviceId.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-07-18T08:37:49Z",
+      "side": 1,
+      "message": "I believe these exceptions and exists() checks are already handled by the FileUtils.readOneLine() method? https://github.com/CyanogenMod/cm_platform_sdk/blob/cm-13.0/sdk/src/java/org/cyanogenmod/internal/util/FileUtils.java#L42",
+      "revId": "1e7f167c7abab21169d3863c4b10a64415dadfda",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
