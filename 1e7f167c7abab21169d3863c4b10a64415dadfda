@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_39746c35",
+        "filename": "cmhw/org/cyanogenmod/hardware/UniqueDeviceId.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 32
+      },
+      "writtenOn": "2016-07-18T15:20:48Z",
+      "side": 1,
+      "message": "Yeah isSupported is probably better.",
+      "parentUuid": "3fa7e38b_fe355af8",
+      "revId": "1e7f167c7abab21169d3863c4b10a64415dadfda",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_dec65e17",
         "filename": "cmhw/org/cyanogenmod/hardware/UniqueDeviceId.java",
         "patchSetId": 2
