@@ -22,7 +22,7 @@
 
 #include <cutils/properties.h>
 
-//#define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #define LOG_TAG "LiveDisplay-SDM"
 #include <utils/Log.h>
@@ -155,8 +155,6 @@ status_t SDM::initialize() {
         return rc;
     }
 
-    mActiveModeId = -1;
-
     if (hasFeature(Feature::DISPLAY_MODES)) {
        sp<DisplayMode> defMode = getDefaultDisplayMode();
        if (defMode != nullptr) {
@@ -277,25 +275,28 @@ status_t SDM::getDisplayModes(List<sp<DisplayMode>>& profiles) {
 
 status_t SDM::setDisplayMode(int32_t modeID, bool makeDefault) {
     status_t rc = OK;
+    sp<DisplayMode> oldMode = getCurrentDisplayMode();
 
-    if (modeID == mActiveModeId) {
+    if (oldMode == nullptr) {
+        return BAD_VALUE;
+    }
+    if (modeID == oldMode->id) {
         return OK;
     }
+
+    ALOGV("setDisplayMode: current mode=%d", oldMode->id);
 
     sp<DisplayMode> mode = getDisplayModeById(modeID);
     if (mode == nullptr) {
         return BAD_VALUE;
     }
 
-    ALOGV("setDisplayMode: current mode=%d", mActiveModeId);
-
-    if (mActiveModeId >= 0) {
-        sp<DisplayMode> oldMode = getDisplayModeById(mActiveModeId);
+    if (mode->id >= 0) {
         ALOGV("setDisplayMode: oldMode=%d flags=%d", oldMode->id, oldMode->privFlags);
         if (oldMode->privFlags == PRIV_MODE_FLAG_SYSFS ||
                 mode->privFlags == PRIV_MODE_FLAG_SYSFS) {
             ALOGV("disabling old mode");
-            rc = setModeState(oldMode, false);
+            rc = setModeState(oldMode, false, makeDefault);
             if (rc != OK) {
                 ALOGE("Failed to disable previous mode! err=%d", rc);
                 return rc;
@@ -303,16 +304,8 @@ status_t SDM::setDisplayMode(int32_t modeID, bool makeDefault) {
         }
     }
 
-    rc = setModeState(mode, true);
+    rc = setModeState(mode, true, makeDefault);
     if (rc == OK) {
-        mActiveModeId = mode->id;
-        if (makeDefault) {
-            rc = Utils::writeLocalModeId(mode->id);
-            if (rc != OK) {
-                ALOGE("failed to save mode! %d", rc);
-                return rc;
-            }
-        }
         HSIC tmp;
         rc = getPictureAdjustment(tmp);
         if (rc != OK) {
@@ -347,34 +340,67 @@ sp<DisplayMode> SDM::getDisplayModeById(int32_t id) {
 }
 
 sp<DisplayMode> SDM::getCurrentDisplayMode() {
-    return getDisplayModeById(mActiveModeId);
+    int32_t id = 0;
+    uint32_t mask = 0, flags = 0;
+
+    status_t rc = disp_api_get_active_display_mode(mHandle, 0, &id, &mask, &flags);
+    if (rc == OK && id >= 0) {
+        return getDisplayModeById(id);
+    }
+
+    return nullptr;
 }
 
 sp<DisplayMode> SDM::getDefaultDisplayMode() {
     int32_t id = 0;
-    if (Utils::readLocalModeId(&id) == OK && id >= 0) {
+    uint32_t flags = 0;
+
+    status_t rc = disp_api_get_default_display_mode(mHandle, 0, &id, &flags);
+    if (rc == OK && id >= 0) {
         return getDisplayModeById(id);
     }
+
     return nullptr;
 }
 
-status_t SDM::setModeState(sp<DisplayMode> mode, bool state) {
-    uint32_t flags = 0;
-    int32_t id = 0;
+status_t SDM::setModeState(sp<DisplayMode> mode, bool state, bool makeDefault) {
+    status_t rc = OK;
 
     if (mode->privFlags == PRIV_MODE_FLAG_SYSFS) {
         ALOGV("sysfs node: %s state=%d", mode->privData.string(), state);
         return Utils::writeInt(mode->privData.string(), state ? 1 : 0);
     } else if (mode->privFlags == PRIV_MODE_FLAG_SDM) {
         if (state) {
-            return disp_api_set_active_display_mode(mHandle, 0, mode->id, 0);
+            rc = disp_api_set_active_display_mode(mHandle, 0, mode->id, 0);
+            if (rc != OK) {
+                ALOGE("Failed to set active display mode to %d! err=%d", mode->id, rc);
+                goto error;
+            }
+            if (makeDefault) {
+                rc = disp_api_set_default_display_mode(mHandle, 0, mode->id, 0);
+                if (rc != OK) {
+                    ALOGE("Failed to set default display mode to %d! err=%d", mode->id, rc);
+                    goto error;
+                }
+            }
         } else {
-            if (disp_api_get_default_display_mode(mHandle, 0, &id, &flags) == 0) {
-                ALOGV("set sdm mode to default: id=%d", id);
-                return disp_api_set_active_display_mode(mHandle, 0, id, 0);
+            rc = disp_api_set_active_display_mode(mHandle, 0, 0, 0);
+            if (rc != OK) {
+                ALOGE("Failed to set active display mode to 0! err=%d", rc);
+                goto error;
+            }
+            if (makeDefault) {
+                rc = disp_api_set_default_display_mode(mHandle, 0, 0, 0);
+                if (rc != OK) {
+                    ALOGE("Failed to set default display mode to 0! err=%d", rc);
+                    goto error;
+                }
             }
         }
     }
+    return rc;
+
+error:
     return BAD_VALUE;
 }
 
