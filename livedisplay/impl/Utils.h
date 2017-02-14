@@ -34,9 +34,9 @@ public:
 
     static status_t exists(const char* node);
 
-    static status_t writeLocalModeId(int32_t id);
+    static status_t writeLocalModeId(int32_t id, bool state);
 
-    static status_t readLocalModeId(int32_t* id);
+    static status_t readLocalModeId(int32_t* id, bool state);
 };
 
 };

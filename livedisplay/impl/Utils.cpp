@@ -28,6 +28,7 @@
 
 #define LOCAL_STORAGE_PATH "/data/misc/display"
 #define LOCAL_MODE_ID "livedisplay_mode"
+#define LOCAL_DEFAULT_MODE_ID "livedisplay_default_mode"
 
 namespace android {
 
@@ -71,15 +72,23 @@ status_t Utils::writeInt(const char* node, int32_t value) {
     return ret;
 }
 
-status_t Utils::readLocalModeId(int32_t* id) {
+status_t Utils::readLocalModeId(int32_t* id, bool state) {
     char buf[PATH_MAX];
-    sprintf(buf, "%s/%s", LOCAL_STORAGE_PATH, LOCAL_MODE_ID);
+    if (state) {
+        sprintf(buf, "%s/%s", LOCAL_STORAGE_PATH, LOCAL_DEFAULT_MODE_ID);
+    } else {
+        sprintf(buf, "%s/%s", LOCAL_STORAGE_PATH, LOCAL_MODE_ID);
+    }
     return readInt(buf, id);
 }
 
-status_t Utils::writeLocalModeId(int32_t id) {
+status_t Utils::writeLocalModeId(int32_t id, bool state) {
     char buf[PATH_MAX];
-    sprintf(buf, "%s/%s", LOCAL_STORAGE_PATH, LOCAL_MODE_ID);
+    if (state) {
+        sprintf(buf, "%s/%s", LOCAL_STORAGE_PATH, LOCAL_DEFAULT_MODE_ID);
+    } else {
+        sprintf(buf, "%s/%s", LOCAL_STORAGE_PATH, LOCAL_MODE_ID);
+    }
     return writeInt(buf, id);
 }
 
