@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa5d592f_aaf12f97",
+        "filename": "livedisplay/impl/SDM.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 14934
+      },
+      "writtenOn": "2017-02-14T13:09:59Z",
+      "side": 1,
+      "message": "Where does it store default value?",
+      "range": {
+        "startLine": 374,
+        "startChar": 17,
+        "endLine": 374,
+        "endChar": 50
+      },
+      "revId": "4de43b729352b355b0e6b63459d046cc07a8775f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
