@@ -359,22 +359,39 @@ sp<DisplayMode> SDM::getDefaultDisplayMode() {
 }
 
 status_t SDM::setModeState(sp<DisplayMode> mode, bool state) {
-    uint32_t flags = 0;
-    int32_t id = 0;
+    status_t rc = OK;
 
     if (mode->privFlags == PRIV_MODE_FLAG_SYSFS) {
         ALOGV("sysfs node: %s state=%d", mode->privData.string(), state);
         return Utils::writeInt(mode->privData.string(), state ? 1 : 0);
     } else if (mode->privFlags == PRIV_MODE_FLAG_SDM) {
         if (state) {
-            return disp_api_set_active_display_mode(mHandle, 0, mode->id, 0);
+            rc = disp_api_set_active_display_mode(mHandle, 0, mode->id, 0);
+            if (rc != OK) {
+                ALOGE("Failed to set active display mode to %d! err=%d", mode->id, rc);
+                goto error;
+            }
+            rc = disp_api_set_default_display_mode(mHandle, 0, mode->id, 0);
+            if (rc != OK) {
+                ALOGE("Failed to set default display mode to %d! err=%d", mode->id, rc);
+                goto error;
+            }
         } else {
-            if (disp_api_get_default_display_mode(mHandle, 0, &id, &flags) == 0) {
-                ALOGV("set sdm mode to default: id=%d", id);
-                return disp_api_set_active_display_mode(mHandle, 0, id, 0);
+            rc = disp_api_set_active_display_mode(mHandle, 0, 0, 0);
+            if (rc != OK) {
+                ALOGE("Failed to set active display mode to 0! err=%d", rc);
+                goto error;
+            }
+            rc = disp_api_set_default_display_mode(mHandle, 0, 0, 0);
+            if (rc != OK) {
+                ALOGE("Failed to set default display mode to 0! err=%d", rc);
+                goto error;
             }
         }
     }
+    return rc;
+
+error:
     return BAD_VALUE;
 }
 
