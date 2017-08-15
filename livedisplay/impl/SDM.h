@@ -15,6 +15,9 @@
 #define SRGB_NODE "/sys/class/graphics/fb0/srgb"
 #define SRGB_NODE_ID 601
 
+#define DCI_P3_NODE "/sys/class/graphics/fb0/dci_p3"
+#define DCI_P3_NODE_ID 602
+
 #define PRIV_MODE_FLAG_SDM 1
 #define PRIV_MODE_FLAG_SYSFS 2
 
