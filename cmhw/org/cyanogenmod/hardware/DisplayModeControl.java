@@ -18,7 +18,7 @@ package org.cyanogenmod.hardware;
 
 import android.util.Log;
 
-import cyanogenmod.hardware.DisplayMode;
+import lineageos.hardware.DisplayMode;
 
 /*
  * Display Modes API

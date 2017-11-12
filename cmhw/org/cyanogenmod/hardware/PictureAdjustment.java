@@ -18,7 +18,7 @@ package org.cyanogenmod.hardware;
 
 import android.util.Range;
 
-import cyanogenmod.hardware.HSIC;
+import lineageos.hardware.HSIC;
 
 /**
  * Color balance support

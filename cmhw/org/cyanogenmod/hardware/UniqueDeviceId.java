@@ -18,7 +18,7 @@ package org.cyanogenmod.hardware;
 
 import android.util.Log;
 
-import org.cyanogenmod.internal.util.FileUtils;
+import org.lineageos.internal.util.FileUtils;
 
 /**
  * Generate a unique but deterministic ID for this hardware, based on unchangeable

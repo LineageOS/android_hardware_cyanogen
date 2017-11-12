@@ -19,8 +19,8 @@ package org.cyanogenmod.hardware;
 import android.util.Log;
 import android.util.Range;
 
-import cyanogenmod.hardware.DisplayMode;
-import cyanogenmod.hardware.HSIC;
+import lineageos.hardware.DisplayMode;
+import lineageos.hardware.HSIC;
 
 /**
  * This class loads an implementation of the LiveDisplay native interface.
