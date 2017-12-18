@@ -21,12 +21,10 @@ import android.util.Range;
 import cyanogenmod.hardware.HSIC;
 
 /**
- * Color balance support
+ * Picture adjustment support
  *
- * Color balance controls allow direct adjustment of display color temperature
- * using a range of values. A zero implies no adjustment, negative values
- * move towards warmer temperatures, and positive values move towards
- * cool temperatures.
+ * Allows tuning of hue, saturation, intensity, and contrast levels
+ * of the display
  */
 public class PictureAdjustment {
 
@@ -34,7 +32,7 @@ public class PictureAdjustment {
             LiveDisplayVendorImpl.hasNativeFeature(LiveDisplayVendorImpl.PICTURE_ADJUSTMENT);
 
     /**
-     * Whether device supports color balance control
+     * Whether device supports picture adjustment
      *
      * @return boolean Supported devices must return always true
      */
@@ -43,9 +41,10 @@ public class PictureAdjustment {
     }
 
     /**
-     * This method returns the current picture adjustment values
+     * This method returns the current picture adjustment values based
+     * on the selected DisplayMode.
      *
-     * @return HSIC
+     * @return the HSIC object or null if not supported
      */
     public static HSIC getHSIC() {
         if (sHasNativeSupport) {
@@ -55,9 +54,12 @@ public class PictureAdjustment {
     }
 
     /**
-     * This method returns the default picture adjustment for the current mode
+     * This method returns the default picture adjustment values.
      *
-     * @return HSIC
+     * If DisplayModes are available, this may change depending on the
+     * selected mode.
+     *
+     * @return the HSIC object or null if not supported
      */
     public static HSIC getDefaultHSIC() {
         if (sHasNativeSupport) {
@@ -82,7 +84,7 @@ public class PictureAdjustment {
 
     /**
      * Get the range available for hue adjustment
-     * @return range
+     * @return range of floats
      */
     public static Range<Float> getHueRange() {
         if (sHasNativeSupport) {
@@ -93,7 +95,7 @@ public class PictureAdjustment {
 
     /**
      * Get the range available for saturation adjustment
-     * @return range
+     * @return range of floats
      */
     public static Range<Float> getSaturationRange() {
         if (sHasNativeSupport) {
@@ -104,7 +106,7 @@ public class PictureAdjustment {
 
     /**
      * Get the range available for intensity adjustment
-     * @return range
+     * @return range of floats
      */
     public static Range<Float> getIntensityRange() {
         if (sHasNativeSupport) {
@@ -115,7 +117,7 @@ public class PictureAdjustment {
 
     /**
      * Get the range available for contrast adjustment
-     * @return range
+     * @return range of floats
      */
     public static Range<Float> getContrastRange() {
         if (sHasNativeSupport) {
@@ -127,10 +129,9 @@ public class PictureAdjustment {
     /**
      * Get the range available for saturation threshold adjustment
      *
-     * This is an adjustable lower limit where the image is fully
-     * desaturated.
+     * This is the threshold where the display becomes fully saturated
      *
-     * @return range
+     * @return range of floats
      */
     public static Range<Float> getSaturationThresholdRange() {
         if (sHasNativeSupport) {
